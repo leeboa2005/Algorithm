@@ -1,11 +1,4 @@
+
 function solution(strArr) {
-    const newArr = strArr.map((item, index) => {
-        if (index % 2 !== 0) {
-            item = item.toUpperCase();
-        } else {
-            item = item.toLowerCase();
-        }
-        return item;
-    });
-    return newArr;
+    return strArr.map((item, index) => index % 2 === 0 ? item.toLowerCase() : item.toUpperCase());
 }

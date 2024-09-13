@@ -1,17 +1,15 @@
 function solution(t, p) {
-    const pLength = p.length;
-    const pNumber = parseInt(p, 10);
     let answer = 0;
+    const pNum = Number(p);
 
+    for (let i = 0; i <= t.length - p.length; i++) {
+        const substring = t.slice(i, i + p.length);
+        const substringNum = Number(substring);
 
-    for (let i = 0; i <= t.length - pLength; i++) {
-        const substring = t.substring(i, i + pLength);
-        const substringNumber = parseInt(substring, 10);
-        if (substringNumber <= pNumber) {
+        if (substringNum <= pNum) {
             answer++;
         }
     }
 
     return answer;
 }
-

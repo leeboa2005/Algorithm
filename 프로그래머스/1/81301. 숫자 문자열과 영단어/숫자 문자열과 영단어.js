@@ -27,12 +27,9 @@ function solution(s) {
         }
     }
 
-    // 아직 남아있는 문자가 있다면, result에 추가합니다.
     if (currentWord) {
         result += currentWord;
     }
 
     return +result;
 }
-
-console.log(solution('one4seveneight'));

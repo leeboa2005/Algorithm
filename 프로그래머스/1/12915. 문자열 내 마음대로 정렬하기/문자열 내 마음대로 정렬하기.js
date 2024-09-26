@@ -1,12 +1,19 @@
+
+
 function solution(strings, n) {
-    strings.sort(function(a,b){
-        let first = a[n];
-        let second = b[n];
-        if(first === second){
-            return (a > b) - (a < b);
-        }else{
-            return (first > second) - (first < second);
-        }
-    })
-    return strings;
+    let answer = []
+
+    for (let i = 0; i < strings.length; i++) {
+        strings[i] = strings[i][n] + strings[i];
+    }
+  
+    strings.sort();
+
+    for (let j = 0; j < strings.length; j++) {
+        strings[j] = strings[j].replace(strings[j][0], "");
+        answer.push(strings[j]);
+    }
+
+    return answer;
+
 }
